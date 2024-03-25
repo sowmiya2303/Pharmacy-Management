@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Print HTML as PDF</title>
+    <script src="C:\Keerthana\xammpp\htdocs\html2pdf.js"></script>
+
+</head>
+<body>
+	<h1>Print HTML as PDF</h1>
+	<p>This is a sample paragraph.</p>
+	
+	<button id="print-pdf">Print PDF</button>
+
+	<script>
+		function printAsPdf() {
+  const element = document.getElementById('print-pdf'); // Replace "content-to-print" with the ID of the element you want to print
+  html2pdf()
+    .from(element)
+    .save('document.pdf');
+}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+INSERT INTO `employee` (`ID`, `SSN`, `License`, `first_name`, `last_name`, `start_date`, `end_date`, `role`, `salary`, `phone_number`, `date_of_birth`) VALUES ('5421', '5354', NULL, 'Adam', ' John', '2023-04-29', '2025-04-26', 'Manager', '12000', '9876598435', '2013-04-01');
+
+INSERT INTO `employee` (`ID`, `SSN`, `License`, `first_name`, `last_name`, `start_date`, `end_date`, `role`, `salary`, `phone_number`, `date_of_birth`) VALUES ('7354', '9886', NULL, 'Kernel', 'Smith', '2023-04-21', '2028-04-27', 'Bio tech Engg', '450000', '9945762376', '2013-04-02');
+
+INSERT INTO `employee` (`ID`, `SSN`, `License`, `first_name`, `last_name`, `start_date`, `end_date`, `role`, `salary`, `phone_number`, `date_of_birth`) VALUES ('8546', '1234', NULL, 'Clare', 'Ratch', '2023-04-21', '2024-04-24', 'Cashier', '10000', '98932454564', '2013-01-09');

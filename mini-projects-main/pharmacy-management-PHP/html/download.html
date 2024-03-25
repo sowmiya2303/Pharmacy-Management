@@ -1,0 +1,24 @@
+<html><head></head>
+<body>
+<button onclick="download_report()">Download Report Bill</button>
+<script>
+function download_report() {
+    // Send an AJAX request to the PHP script that generates the report bill
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "generate_report.php", true);
+    xhr.responseType = "blob";
+    xhr.onload = function() {
+        // Create a link element and set its href attribute to the generated report bill URL
+        var url = window.URL.createObjectURL(xhr.response);
+        var link = document.createElement("a");
+        link.href = url;
+        link.download = "report_bill.pdf";
+        document.body.appendChild(link);
+        // Click the link to initiate the download
+        link.click();
+    };
+    xhr.send();
+}
+</script>
+</body>
+</html>

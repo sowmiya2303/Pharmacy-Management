@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
+    </head>
+    <body>
+        
+        <div id="content">hii</div>
+        <button onclick="download_pdf()">Download Report Bill</button>
+
+        <script>
+            function download_pdf() {
+            // Create a new jsPDF instance
+            var doc = new jsPDF();
+            // Get the HTML content to be converted to PDF
+            var html = document.getElementById('content').innerHTML;
+            // Convert the HTML to PDF
+            doc.fromHTML(html, 15, 15);
+            // Save the PDF
+            doc.save('document.pdf');
+        }
+        </script>
+        
+    </body>
+</html>
