@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pharmacy Management System - Login</title>
+	<style>
+	
+		body {
+			background-image: url('pharm.jpg');
+			margin: 0;
+			padding: 0;
+			background-color:olive;
+			font-family: Arial, sans-serif;
+		}
+
+		.container {
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 36px;
+			color: #333333;
+			margin-bottom: 20px;
+		}
+
+		form {
+			max-width: 400px;
+			margin: 0 auto;
+			background-color: #ffffff;
+			padding: 40px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+		}
+
+		label {
+			display: block;
+			font-size: 20px;
+			color: #333333;
+			margin-bottom: 10px;
+		}
+
+		input[type="text"], input[type="password"] {
+			display: block;
+			width: 100%;
+			padding: 12px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 20px;
+			box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.3);
+		}
+
+		input[type="submit"] {
+			background-color: #007bff;
+			color: #ffffff;
+			padding: 12px 24px;
+			font-size: 20px;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #0062cc;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		
+		<form action="home.html" method="post">
+			<label for="username">Username</label>
+			<input type="text" id="un" name="username" required>
+
+			<label for="password">Password</label>
+			<input type="password" id="pd" name="password" required>
+
+			<input type="submit" value="Log in" id="bt">
+
+		</form>
+	</div>
+
+	<script>
+		function validate()
+{
+
+		var Y=document.getElementById("pd").value;
+		var x=document.getElementById("un").value;
+		if(!/^[a-z A-Z]{5,7}$/g.test(x))
+		{ document.getElementById("r1").innerHTML="IN VALID USERID";}
+		
+		else if(!/^[a-z A-Z 0-9]{7,12}$/g.test(Y))
+		{document.getElementById("r2").innerHTML="IN VALID PASSWORD";}
+}
+		</script>
+</body>
+</html>

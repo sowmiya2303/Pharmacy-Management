@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <style>
+            .window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  resize: both;
+  overflow: auto;
+}
+
+.window-header {
+  padding: 10px;
+  cursor: move;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+}
+
+.window-content {
+  padding: 10px;
+  height: calc(100% - 40px);
+}
+
+.resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  cursor: nwse-resize;
+  background-color: #ccc;
+}
+
+            </style>
+    </head>
+    <body>
+        <div class="window" id="resizable-window">
+            <div class="window-header">Resizable Window</div>
+            <div class="window-content" style="background-color: darkturquoise;">
+              <!-- Window content goes here -->
+            </div>
+            <div class="resize-handle"></div>
+          </div>
+          
+        <script>
+
+var resizableElement = document.getElementById('resizable-window');
+var resizeHandle = document.querySelector('.resize-handle');
+var isResizing = false;
+var originalWidth, originalHeight, originalX, originalY;
+
+resizeHandle.addEventListener('mousedown', function (e) {
+  e.preventDefault();
+  isResizing = true;
+  originalWidth = parseFloat(getComputedStyle(resizableElement, null).getPropertyValue('width'));
+  originalHeight = parseFloat(getComputedStyle(resizableElement, null).getPropertyValue('height'));
+  originalX = e.clientX;
+  originalY = e.clientY;
+});
+
+document.addEventListener('mousemove', function (e) {
+  if (!isResizing) return;
+
+  var width = originalWidth + (e.clientX - originalX);
+  var height = originalHeight + (e.clientY - originalY);
+
+  resizableElement.style.width = width + 'px';
+  resizableElement.style.height = height + 'px';
+});
+
+document.addEventListener('mouseup', function () {
+  isResizing = false;
+});
+
+            </script>
+    </body>
+</html>
